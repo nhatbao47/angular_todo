@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TodoModel } from '../../models/todo.model';
 import { CommonModule } from '@angular/common';
 import { ToStringPipe } from '../../pipes/to-string.pipe';
@@ -12,4 +12,14 @@ import { ToStringPipe } from '../../pipes/to-string.pipe';
 })
 export class TodoTableComponent {
   @Input() data: TodoModel[] = [];
+  @Output() deleteTodoEvent = new EventEmitter<number>();
+  @Output() toggleTodoEvent = new EventEmitter<TodoModel>();
+
+  onDelete(id: number) {
+    this.deleteTodoEvent.emit(id);
+  }
+
+  onToggle(item: TodoModel) {
+    this.toggleTodoEvent.emit(item);
+  }
 }

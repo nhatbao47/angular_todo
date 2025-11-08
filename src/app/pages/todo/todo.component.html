@@ -1,3 +1,3 @@
 <h2 class="text-center mb-4">📝 To-Do List</h2>
-<new-todo></new-todo>
-<todo-table [data]="todos"></todo-table>
+<new-todo (createNewTodoEvent)="onCreateNewTodo($event)"></new-todo>
+<todo-table [data]="todos" (toggleTodoEvent)="onToggleTodo($event)" (deleteTodoEvent)="onDeleteTodo($event)"></todo-table>

@@ -10,8 +10,8 @@ export class TodoService {
     constructor() {
         // Initial dummy data
         this.todos = [
-            new TodoModel(1, 'Sample Todo 1', 'This is a sample todo item', false),
-            new TodoModel(2, 'Sample Todo 2', 'This is another sample todo item', true)
+            new TodoModel(1, 'This is a sample todo item', false),
+            new TodoModel(2, 'This is another sample todo item', true)
         ];
     }
 
@@ -20,6 +20,8 @@ export class TodoService {
     }
 
     addTodo(item: TodoModel) {
+        const newId = this.todos.length > 0 ? Math.max(...this.todos.map(todo => todo.id)) + 1 : 1;
+        item.id = newId;
         this.todos.push(item);
     }
 
