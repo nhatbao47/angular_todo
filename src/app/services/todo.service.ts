@@ -1,8 +1,9 @@
 import { TodoModel } from "../models/todo.model";
 import { Injectable } from "@angular/core";
+import { TodoRoutingModule } from "../pages/todo/todo-routing.module";
 
 @Injectable({
-    providedIn: 'root'
+    providedIn: TodoRoutingModule
 })
 export class TodoService {
     private todos: TodoModel[] = [];
