@@ -2,11 +2,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { TodoModel } from '../../models/todo.model';
 import { CommonModule } from '@angular/common';
 import { ToStringPipe } from '../../pipes/to-string.pipe';
+import { ToggleDirective } from '../../directives/toggle.directive';
 
 @Component({
   selector: 'todo-table',
   standalone: true,
-  imports: [ CommonModule, ToStringPipe],
+  imports: [ CommonModule, ToStringPipe, ToggleDirective],
   templateUrl: './todo-table.component.html',
   styleUrl: './todo-table.component.scss'
 })

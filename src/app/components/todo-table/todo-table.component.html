@@ -15,7 +15,7 @@
         <td>{{item.completed | tostring}}</td>
         <td>
           <button type="button" class="btn btn-sm btn-danger" (click)="onDelete(item.id)">Remove</button>
-          <button type="button" class="btn btn-sm btn-outline-secondary" (click)="onToggle(item)">{{item.completed ? 'Undo' : 'Done'}}</button>
+          <button type="button" class="btn btn-sm" toggleClass [condition]="item.completed" (click)="onToggle(item)">{{item.completed ? 'Undo' : 'Done'}}</button>
         </td>
       </tr>
     </tbody>
